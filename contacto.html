@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,22 +19,22 @@
         </nav>
     </header>
     <main>
-        <form>
+        <form class="formulario">
             <div>
                 <label >Nombre:</label>
-                <input type="text" required>
+                <input class="nombre" type="text" required>
             </div>
             <div>
                 <label >Email:</label>
-                <input type="email" required>
+                <input class="correo" type="email" required>
             </div>
             <div>
                 <label>Mensaje:</label>
-                <textarea rows="4" required></textarea>
+                <textarea class="mensajeContacto" rows="4" required></textarea>
             </div>
             <button type="submit">Enviar</button>
         </form>
-        <div></div>
+        <div class="mensaje"></div>
     </main>
     <footer>
         <p>&copy; 2024 - Pasteleria CJF</p>

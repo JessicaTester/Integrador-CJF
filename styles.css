@@ -1,5 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
     margin: 0;
     padding: 0;
 }
@@ -7,7 +10,7 @@ body {
 header,
 footer {
     background-color: #D81B60;
-    color: #fff;
+    color: #ffffff;
     padding: 10px 20px;
 }
 
@@ -29,7 +32,7 @@ nav ul li a {
 
 main {
     padding: 20px;
-    
+    margin-bottom: 60px;   
 }
 
 footer {
@@ -64,11 +67,13 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 6px;
 }
 
 button[type="submit"]:hover {
@@ -88,6 +93,7 @@ button[type="submit"]:hover {
     font-size: 20px;
     z-index: 1;
     border-radius: 6px;
+    margin: 5px;
 }
 
 .btnAnterior {
@@ -96,15 +102,18 @@ button[type="submit"]:hover {
 
 .btnSiguiente {
     right: 0;
+
 }
+
 .carru{
-    background-color: #d85c5c7a;
+    background-color: #e021217a;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6px;
 }
+
 .carruContenido {
     width: 800px;
     height: 400px;
@@ -112,9 +121,7 @@ button[type="submit"]:hover {
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    object-fit: cover;
     position: relative;
-
 }
 
 .carruImgs {
@@ -126,4 +133,18 @@ button[type="submit"]:hover {
 .carruImgs img {
     width: 100%;
     height: 100%;
+}
+
+.btnAnterior:hover,
+.btnSiguiente:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.cuerpo{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
 }
