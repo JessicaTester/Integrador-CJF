@@ -35,12 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         formulario.addEventListener('submit', (e) => {
             e.preventDefault();
-            const nom = document.querySelector('.nombre').value;
-            const corr = document.querySelector('.correo').value;
-            const msjUsu = document.querySelector('.mensajeContacto').value;
+            const nom = document.querySelector('.nombre').value.trim();
+            const corr = document.querySelector('.correo').value.trim();
+            const msjUsu = document.querySelector('.mensajeContacto').value.trim();
 
-            if (nom.trim() === '' || corr.trim() === '' || msjUsu.trim() === '') {
+            if (nom === '' || corr === '') {
                 msj.innerHTML = '<p>Debe rellenar todos los campos.</p>';
+                return;
+            }
+
+            const nomR = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ ]+$/;
+            if (nom.length > 30){
+                msj.innerHTML = '<p>El nombre debe tener un maximo de 30 caracteres.</p>';
+                return;
+            }
+
+            if(!nomR.test(nom)){
+                msj.innerHTML = '<p>El nombre no puede contener numeros ni caracteres extraños.</p>';
                 return;
             }
 
@@ -50,12 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            if (msjUsu !== '' && (msjUsu.length < 10 || msjUsu.length > 200)) {
+                msj.innerHTML = '<p>Si se incluye mensaje debe ser mayor a 10 y un maximo de 200 caracteres.</p>';
+                return;
+            }
+
             msj.innerHTML = `
                 <p>De Pastelería CJF agradecemos tu mensaje.</p>
                 <ul>
                     <li><strong>Nombre:</strong> ${nom}</li>
                     <li><strong>Correo:</strong> ${corr}</li>
-                    <li><strong>Mensaje:</strong> ${msjUsu}</li>
+                    <li><strong>Mensaje:</strong> ${msjUsu ? msjUsu : 'Sin mensaje'}</li>
                 </ul>
             `;
             formulario.reset();
